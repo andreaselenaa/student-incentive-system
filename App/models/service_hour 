@@ -1,0 +1,14 @@
+from app import db
+from datetime import datetime
+
+class ServiceHour(db.Model):
+    __tablename__ = "service_hours"
+    id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer, db.ForeignKey("students.id"), nullable=False)
+    staff_id = db.Column(db.Integer, db.ForeignKey("staff.id"), nullable=True)
+    hours = db.Column(db.Integer, nullable=False)
+    confirmed = db.Column(db.Boolean, default=False)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<ServiceHour {self.id} student:{self.student_id} {self.hours}h confirmed:{self.confirmed}>"
