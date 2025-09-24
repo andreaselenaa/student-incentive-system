@@ -1,9 +1,13 @@
 # wsgi.py
-from app import create_app, db
-from app.models.student import Student
-from app.models.staff import Staff
-from app.models.service_hour import ServiceHour
-from app.models.accolade import Accolade
+
+from App import create_app, db
+from App.models.student import Student
+from App.models.staff import Staff
+from App.models.service_hour import ServiceHour
+from App.models.accolade import Accolade
+
+from App.seed import student_db, staff_db
+
 
 from app.controllers import student_controller, staff_controller, leaderboard_controller
 import click
