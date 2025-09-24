@@ -1,7 +1,7 @@
-from app import db
-from app.models.service_hour import ServiceHour
-from app.models.student import Student
-from app.models.accolade import Accolade
+from App import db
+from App.models.service_hour import ServiceHour
+from App.models.student import Student
+from App.models.accolade import Accolade
 
 MILESTONES = [10, 25, 50]
 
@@ -39,7 +39,7 @@ def confirm_hours(service_hour_id: int, staff_id: int):
 
 def _award_accolades_if_any(student):
     """Internal: add Accolade rows if student passed milestones."""
-    from app.models.accolade import Accolade
+    from App.models.accolade import Accolade
     existing = {a.milestone for a in student.accolades}
     for m in MILESTONES:
         if student.total_hours >= m and m not in existing:

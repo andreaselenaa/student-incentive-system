@@ -1,4 +1,4 @@
-from app import db
+from App import db
 from datetime import datetime
 
 class Student(db.Model):

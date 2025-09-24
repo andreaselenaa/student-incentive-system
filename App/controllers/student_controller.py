@@ -1,7 +1,7 @@
-from app import db
-from app.models.student import Student
-from app.models.service_hour import ServiceHour
-from app.models.accolade import Accolade
+from App import db
+from App.models.student import Student
+from App.models.service_hour import ServiceHour
+from App.models.accolade import Accolade
 
 MILESTONES = [10, 25, 50]
 
